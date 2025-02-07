@@ -1,15 +1,23 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-const textshadow = require('tailwindcss-textshadow');
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
+        './resources/views/**/*.blade.php',
     ],
+    safelist: [
+        'fa-solid',
+        'fa-home',
+        'fa-user',
+        'fa-envelope',
+        'fa-phone' // Tambahkan ikon lain yang digunakan
+    ],
+
     theme: {
         extend: {
             fontFamily: {
@@ -33,11 +41,9 @@ export default {
                 hijauM:"#32CD32",
                 hitamH:"#4D4D4D",
                 hitamKTK:"#303030"
-
             },
         },
     },
-    plugins: [
-        textshadow,
-    ],
+
+    plugins: [forms, typography],
 };

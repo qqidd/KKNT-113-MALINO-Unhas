@@ -89,7 +89,7 @@
         <div class="flex gap-5 items-start mt-10 m-10">
             <a href="{{route('riss')}}" class="block">
                 <div class="bg-hitamK h-72 w-96 rounded-lg flex-shrink-0 relative shadow-lg overflow-hidden">
-                    <!-- Tambahkan Gambar dengan Animasi Hover -->
+                    <!-- Animasi -->
                     <img src="Images/profile.jpg" alt="Deskripsi Gambar"
                         class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
                     <!-- Elemen "New" -->
@@ -116,7 +116,7 @@
         <div class="flex gap-5 items-start mt-10 m-10">
             <a href="{{route('tugu')}}" class="block">
                 <div class="bg-hitamK h-72 w-96 rounded-lg flex-shrink-0 relative shadow-lg overflow-hidden">
-                    <!-- Gambar dengan Animasi Hover -->
+                    <!-- Animasi -->
                     <img src="Images/profile.jpg" alt="Deskripsi Gambar"
                         class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
                     <!-- Elemen "New" -->
@@ -143,7 +143,7 @@
         <div class="flex gap-5 items-start mt-10 m-10">
             <a href="{{route('pasar')}}" class="block">
                 <div class="bg-hitamK h-72 w-96 rounded-lg flex-shrink-0 relative shadow-lg overflow-hidden">
-                    <!-- Gambar dengan Animasi Hover -->
+                    <!-- Animasi -->
                     <img src="Images/profile.jpg" alt="Deskripsi Gambar"
                         class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
                     <!-- Elemen "New" -->

@@ -36,15 +36,15 @@
 
     <div class="bg-hitam text-gray-300 font-inter p-6 m-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Card 1 -->
+            <!-- 1 -->
             <div class="bg-hitamK p-6 rounded-lg shadow-lg">
-                <!-- Gambar dengan animasi saat hover -->
+                <!-- Animasi -->
                 <div class="flex justify-center mb-4 shadow-lg">
                     <img alt="Gambar 1"
                         class="w-full h-auto bg-hitamK rounded-lg aspect-[16/9] transform transition-transform duration-300 ease-in-out hover:scale-105"
                         src="images/gambar6.jpg" />
                 </div>
-                <!-- Teks tetap berada di posisi semula -->
+                <!-- Teks -->
                 <h2 class="text-xl font-semibold text-white mb-2">Penampilan</h2>
                 <ul class="list-disc list-inside text-putihT space-y-2">
                     <li>Daya Tarik Utama: Tampilkan keunikan hutan pinus, seperti:</li>
@@ -56,15 +56,15 @@
                 </ul>
             </div>
 
-            <!-- Card 2 -->
+            <!-- 2 -->
             <div class="bg-hitamK p-6 rounded-lg shadow-lg">
-                <!-- Gambar dengan animasi saat hover -->
+                <!-- Animasi -->
                 <div class="flex justify-center mb-4 shadow-lg">
                     <img alt="Gambar 1"
                         class="w-full h-auto bg-hitamK rounded-lg aspect-[16/9] transform transition-transform duration-300 ease-in-out hover:scale-105"
                         src="images/gambar6.jpg" />
                 </div>
-                <!-- Teks tetap berada di posisi semula -->
+                <!-- Teks -->
                 <h2 class="text-xl font-semibold mb-2 text-merahRM">Penampilan</h2>
                 <ul class="list-disc list-inside space-y-2 text-putihT">
                     <li>Daya Tarik Utama: Tampilkan keunikan hutan pinus, seperti:</li>
@@ -76,15 +76,15 @@
                 </ul>
             </div>
 
-            <!-- Card 3 -->
+            <!-- 3 -->
             <div class="bg-hitamK p-6 rounded-lg shadow-lg">
-                <!-- Gambar dengan animasi saat hover -->
+                <!-- Animasi -->
                 <div class="flex justify-center mb-4 shadow-lg">
                     <img alt="Gambar 1"
                         class="w-full h-auto bg-hitamK rounded-lg aspect-[16/9] transform transition-transform duration-300 ease-in-out hover:scale-105"
                         src="images/gambar6.jpg" />
                 </div>
-                <!-- Teks tetap berada di posisi semula -->
+                <!-- Teks -->
                 <h2 class="text-xl font-semibold mb-2 text-white">Penampilan</h2>
                 <ul class="list-disc list-inside space-y-2 tetx-putihT">
                     <li>Daya Tarik Utama: Tampilkan keunikan hutan pinus, seperti:</li>

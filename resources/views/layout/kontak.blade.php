@@ -26,7 +26,6 @@
             <div class="max-w-2xl bg-hitam shadow-lg p-10 rounded-lg border-2 border-black ml-40">
                 <form>
                     <div class="mb-6">
-                        <!-- Jarak antar input diperbesar -->
                         <label class="block text-white mb-3" for="name">Nama Lengkap <span
                                 class="text-red-500">*</span></label>
                         <input
@@ -65,7 +64,6 @@
                 </form>
             </div>
             <div class="flex justify-center ml-10 -mt-4">
-                <!-- Geser sedikit dari kiri -->
                 <div class="m-10 h-2 w-40 rounded-l bg-gradient-to-r from-blue-500 to-green-500 mt-10"></div>
             </div>
 

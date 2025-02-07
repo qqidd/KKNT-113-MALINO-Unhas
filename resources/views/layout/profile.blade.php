@@ -18,9 +18,10 @@
             </p> <!-- edit ini -->
         </div>
         <div class="flex items-start w-full">
-            <div class="bg-hitamK h-64 w-1/2 rounded-lg shadow-lg transform ml-64 relative border-8 border-hitamK">
-                <img src=" images/profile.jpg" alt="Deskripsi Profil Our"
-                    class="absolute top-0 left-0 w-full h-full object-cover rounded-lg" />
+            <div
+                class="bg-hitamK h-64 w-1/2 rounded-lg shadow-lg transform ml-64 relative border-8 border-hitamK overflow-hidden">
+                <img src="images/profile.jpg" alt="Deskripsi Profil Our"
+                    class="absolute top-0 left-0 w-full h-full object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110" />
             </div>
         </div>
         <div class=" flex flex-row-reverse mx-40">
@@ -49,9 +50,11 @@
             pemerintahan raja Gowa VI Tunatangkalopi, ada upaya untuk memperluas wilayahnya, dengan menaklukkan wilayah
             sekitarnya, Gowa Tallo akan menjadi Kerajaan Kembar.
             <br><br>
-            Sumber: blablalblblab
+            Sumber :<a class="text-white focus:text-blue-500 active:text-blue-500 hover:text-biru"
+                href="https://id.wikipedia.org/wiki/Malino,_Tinggimoncong,_Gowa">
+                Malino, Tinggimoncong, Gowa </a>
         </p>
-        <div class=" m-10flex -mt-28 flex-row-reverse" style="margin-left: 1010px; margin-right: 1010px;">
+        p <div class=" m-10flex -mt-28 flex-row-reverse" style="margin-left: 1010px; margin-right: 1010px;">
             <div class="m-5 h-2 w-40 rounded-lg bg-gradient-to-r from-hijau to-biru mt-2 translate-x-48">
             </div>
             <!-- edit ini jika p dari selamat datang d tambahkakn -->
@@ -60,9 +63,7 @@
     <div>
         <h2 class="font-inter m-24 text-4xl font-bold text-transparent bg-gradient-to-r text-white mt-30">Lingkungan
             Kelurahan
-            Malino
-            punya
-            ely putri jamila darsyam</h2>
+            Malino </h2>
         <p class="font-inter m-10 px-24 -mt-16 text-white text-lg">Kelurahan Malino Terbagi menjadi 3
             Lingkungan:
             <br>

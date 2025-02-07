@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
 </head>

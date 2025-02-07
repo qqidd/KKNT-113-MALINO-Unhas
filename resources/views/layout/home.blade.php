@@ -24,7 +24,7 @@
     </div>
 
     <div class="flex items-center space-x-6 bg-hitam p-6 rounded-lg mt-32 m-10">
-        <!-- Gradient Border Circle -->
+        <!-- Gradient Bingkai Bundar -->
         <div class="relative w-48 h-48">
             <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-biru via-hijau to-teal-500"></div>
             <div class="relative rounded-full w-48 h-48 overflow-hidden">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <!-- Description Text -->
+        <!-- Deskripsi -->
         <div class="text-white font-inter">
             <h1 class="text-2xl font-bold">Malino</h1>
             <p class="text-lg mt-2">Malino adalah nama kelurahan yang terletak <br>di Kecamatan Tinggimoncong, Kabupaten
@@ -77,7 +77,7 @@
             <div class="flex gap-5 items-start mt-10">
                 <a>
                     <div class="bg-hitamK h-72 w-96 rounded-lg flex-shrink-0 relative shadow-lg overflow-hidden">
-                        <!-- Gambar dengan Animasi Hover -->
+                        <!-- Animasi -->
                         <img src="Images/profile.jpg" alt="Deskripsi Gambar"
                             class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
                         -
@@ -104,7 +104,7 @@
             <div class="flex gap-5 items-start mt-10">
                 <a>
                     <div class="bg-hitamK h-72 w-96 rounded-lg flex-shrink-0 relative shadow-lg overflow-hidden">
-                        <!-- Gambar dengan Animasi Hover -->
+                        <!-- Animasi -->
                         <img src="Images/profile.jpg" alt="Deskripsi Gambar"
                             class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
                         <!-- Elemen "New" -->
@@ -144,10 +144,8 @@
                 <img src="images/profile.jpg" alt="Malino Highland"
                     class="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-40" />
                 <!-- Teks dan Konten -->
-                <div class="relative z-10">
-                    <h2 class="text-2xl font-bold font-sora text-white">Malino Highland</h2>
-                    <p class="text-putihT font-inter text-sm mt-4">Blablablablabla.</p>
-                </div>
+                <h2 class="text-2xl font-bold font-sora text-white">Malino Highland</h2>
+                <p class="text-putihT font-inter text-sm mt-4">Blablablablabla.</p>
                 <!-- Rating dan Logo Bundar -->
                 <div class="absolute bottom-4 left-6 flex items-center gap-3 z-10">
                     <span class="bg-white w-6 h-6 rounded-full"></span>

@@ -34,11 +34,8 @@
 
     <div class="bg-hitam">
 
-        <!-- Container Utama -->
         <div class="relative w-full max-w-[1440px] mx-auto h-[600px] bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-            <!-- Gambar-Gambar dalam slider -->
             <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-                <!-- Slide 1 -->
                 <div
                     class=" relative flex-shrink-0 w-full h-[600px] bg-gradient-to-r from-red-500 to-gray-500 flex items-center justify-center text-white text-2xl font-bold">
                     Gambar 1
@@ -54,7 +51,7 @@
                         ---------------
                     </div>
                 </div>
-                <!-- Slide 2 -->
+
                 <div
                     class="relative flex-shrink-0 w-full h-[600px] bg-gradient-to-r from-blue-500 to-gray-500 flex items-center justify-center text-white text-2xl font-bold">
                     Gambar 2
@@ -67,7 +64,7 @@
                         AWAS KENA'PRANK
                     </div>
                 </div>
-                <!-- Slide 3 -->
+
                 <div
                     class="relative flex-shrink-0 w-full h-[600px] bg-gradient-to-r from-green-500 to-gray-500 flex items-center justify-center text-white text-2xl font-bold">
                     Gambar 3
@@ -82,7 +79,7 @@
                 </div>
             </div>
 
-            <!-- Tombol Panah Kiri -->
+            <!-- Tombol Kiri -->
             <button id="prev"
                 class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-4 hover:bg-gray-200 transition duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -91,7 +88,7 @@
                 </svg>
             </button>
 
-            <!-- Tombol Panah Kanan -->
+            <!-- Tombol Kanan -->
             <button id="next"
                 class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-4 hover:bg-gray-200 transition duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"

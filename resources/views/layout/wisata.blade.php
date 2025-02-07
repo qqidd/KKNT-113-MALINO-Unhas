@@ -34,7 +34,7 @@
             <span class="absolute bottom-4 left-6 bg-white w-6 h-6 rounded-full"></span>
             <div class="absolute bottom-4 right-6 flex items-center text-yellow-400">
                 <span class="material-icons text-base">star</span>
-                <span class="text-sm font-inter text-white ml-2">5 Stars</span>
+                <span class="text-sm font-inter text-white ml-2">4.3 Stars</span>
             </div>
         </div>
         <div class="bg-hitamK h-72 w-full rounded-lg relative p-6 shadow-lg">
@@ -56,7 +56,7 @@
             <span class="absolute bottom-4 left-6 bg-white w-6 h-6 rounded-full"></span>
             <div class="absolute bottom-4 right-6 flex items-center text-yellow-400">
                 <span class="material-icons text-base">star</span>
-                <span class="text-sm font-inter text-white ml-2">4 Stars</span>
+                <span class="text-sm font-inter text-white ml-2">4.5 Stars</span>
             </div>
         </div>
         <div class="bg-hitamK h-72 w-full rounded-lg relative p-6 shadow-lg">
@@ -67,7 +67,7 @@
             <span class="absolute bottom-4 left-6 bg-white w-6 h-6 rounded-full"></span>
             <div class="absolute bottom-4 right-6 flex items-center text-yellow-400">
                 <span class="material-icons text-base">star</span>
-                <span class="text-sm font-inter text-white ml-2">4.7 Stars</span>
+                <span class="text-sm font-inter text-white ml-2">4.6 Stars</span>
             </div>
         </div>
         <div class="bg-hitamK h-72 w-full rounded-lg relative p-6 shadow-lg">
@@ -89,7 +89,7 @@
             <span class="absolute bottom-4 left-6 bg-white w-6 h-6 rounded-full"></span>
             <div class="absolute bottom-4 right-6 flex items-center text-yellow-400">
                 <span class="material-icons text-base">star</span>
-                <span class="text-sm font-inter text-white ml-2">4.7 Stars</span>
+                <span class="text-sm font-inter text-white ml-2">4.5 Stars</span>
             </div>
         </div>
     </div>
