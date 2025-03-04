@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pasar;
 
 class PasarController extends Controller
 {
@@ -12,54 +13,13 @@ class PasarController extends Controller
      */
     public function index()
     {
-        return view('layout.pasar');
-    }
+    // Ambil data untuk bagian pertama (misal: kategori "profil")
+    $pasars1 = Pasar::where('kategori', 'profil')->get();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    // Ambil data untuk bagian kedua (misal: kategori "wisata")
+    $pasars2 = Pasar::where('kategori', 'wisata')->get();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    // Kirim data ke Blade viewA
+    return view('layout.pasar', compact('pasars1', 'pasars2'));
     }
 }

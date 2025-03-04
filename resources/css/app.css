@@ -9,3 +9,32 @@
 [x-cloak] {
     display: none;
 }
+
+#mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden; /* Supaya tidak bisa diklik saat tertutup */
+}
+
+#mobile-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* Untuk IE dan Edge */
+    scrollbar-width: none;  /* Untuk Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Untuk Chrome, Safari, dan Opera */
+}
+
+.border-gradient {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, theme('colors.biru'), theme('colors.hijau')) 1;
+}
+
+

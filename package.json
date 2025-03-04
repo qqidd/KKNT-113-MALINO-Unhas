@@ -17,6 +17,8 @@
         "vite": "^6.0.11"
     },
     "dependencies": {
+        "lucide": "^0.475.0",
+        "lucide-react": "^0.475.0",
         "tailwindcss-textshadow": "^2.1.3"
     }
 }

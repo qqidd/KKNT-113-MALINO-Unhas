@@ -9,6 +9,8 @@ export default {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/**/*.{html,js,php}', // Atur lokasi file Anda yang menggunakan tailwind
+        './vendor/**/*.{html,js}', // Jika menggunakan Laravel atau framework lainnya
     ],
     safelist: [
         'fa-solid',
@@ -40,7 +42,18 @@ export default {
                 orangeM:"#FFA500",
                 hijauM:"#32CD32",
                 hitamH:"#4D4D4D",
-                hitamKTK:"#303030"
+                hitamKTK:"#303030",
+                putihA:"#858585 "
+            },
+            animation: {
+                'spin-slow': 'spin 3s linear infinite',
+                'scale-up': 'scale-up 0.5s ease-in-out',
+            },
+            keyframes: {
+                'scale-up': {
+                  '0%': { transform: 'scale(1)' },
+                  '100%': { transform: 'scale(1.1)' },
+                },
             },
         },
     },

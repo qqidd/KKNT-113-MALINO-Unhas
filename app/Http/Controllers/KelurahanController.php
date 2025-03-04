@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Kantor;
 
 class KelurahanController extends Controller
 {
@@ -12,54 +13,26 @@ class KelurahanController extends Controller
      */
     public function index()
     {
-        return view('layout.kelurahan');
+    // Ambil data untuk bagian pertama (misal: kategori "profil")
+    $kantors1 = Kantor::where('kategori', 'GambarProfil')->get();
+
+     // Ambil data untuk bagian kedua (misal: kategori wisata)
+     $kantors2 = Kantor::whereIn('kategori', ['GambarHutan', 'GambarRiss', 'GambarTugu', 'GambarPasar'])
+     ->get()
+     ->map(function ($wisata) {
+         // Tentukan route berdasarkan kategori
+         $wisata->route = match ($wisata->kategori) {
+             'GambarHutan' => route('hutan'),
+             'GambarRiss' => route('riss'),
+             'GambarTugu' => route('tugu'),
+             'GambarPasar' => route('pasar'),
+             default => route('home'), // Fallback jika kategori tidak dikenali
+         };
+         return $wisata;
+     });
+
+    // Kirim data ke Blade viewA
+    return view('layout.kelurahan', compact('kantors1', 'kantors2'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
