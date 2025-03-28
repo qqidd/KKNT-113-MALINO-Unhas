@@ -46,3 +46,22 @@
     word-break: break-word;
     overflow-wrap: break-word;
 }
+
+/* Untuk Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  /* Untuk Firefox */
+  html {
+    scrollbar-width: none;
+    overflow: auto;
+  }
+  
+  /* Untuk Internet Explorer & Edge lama */
+  body {
+    -ms-overflow-style: none;
+    overflow: auto;
+  }
+  

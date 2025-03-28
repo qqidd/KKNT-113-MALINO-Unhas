@@ -23,6 +23,9 @@ export default {
 
     theme: {
         extend: {
+            scrollbar: {
+                none: 'scrollbar-width: none; -ms-overflow-style: none;',
+              },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 inter: ['inter', ...defaultTheme.fontFamily.sans],
@@ -59,5 +62,5 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, require('tailwind-scrollbar-hide')],
 };

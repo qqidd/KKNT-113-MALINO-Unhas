@@ -19,11 +19,9 @@
 
 
 
-
-
 </head>
 
-<body class="bg-hitam">
+<body class="bg-hitam scrollbar-none overflow-x-hidden scroll-smooth">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>

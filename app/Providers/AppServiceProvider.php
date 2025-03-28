@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Responses\LogoutResponse;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Contracts\LogoutResponse as a;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app->singleton(a::class, LogoutResponse::class);
     }
 }

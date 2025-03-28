@@ -210,7 +210,7 @@
             </h1>
 
             <!-- Teks di bawah Kotak -->
-            <p class="absolute bottom-[-130px] sm:bottom-[-100px] md:bottom-[-210px] text-sm sm:text-lg md:text-xl text-white mt-4 drop-shadow-md text-center w-full"
+            <p class="absolute bottom-[-260px] sm:bottom-[-100px] md:bottom-[-260px] text-sm sm:text-lg md:text-xl text-white mt-4 drop-shadow-md text-center w-full"
                 data-aos="fade-down">
                 PAMIT UNDUR DIRI, SEMOGA BERMANFAAT
             </p>
@@ -261,7 +261,7 @@
                 </div>
             </div>
         </div>
-        <div class="mb-40 pb-20">
+        <div class="mb-60 pb-20">
             <!-- Tambah margin dan padding bawah -->
         </div>
     </div>

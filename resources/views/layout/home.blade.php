@@ -58,27 +58,70 @@
             </p>
         </div>
 
-        <div class="flex gap-5 md:gap-7 m-5 md:m-10 md:ml-0 overflow-x-auto scrollbar-hide scroll-smooth scroll-snap-x"
-            data-aos="fade-up">
-            <div class="flex gap-5 md:gap-7 flex-nowrap">
-                <div
-                    class="bg-hitamK h-56 md:h-64 w-72 md:w-96 rounded-lg shadow-lg p-4 flex flex-col justify-center text-center flex-shrink-0 scroll-snap-align-start">
-                    <h2 class="font-sora text-white text-lg md:text-xl font-semibold">Panorama Alam</h2>
-                    <p class="leading-relaxed text-hitamF mt-2 text-sm md:text-lg">
-                        Malino memiliki gunung-gunung yang kaya akan pemandangan batu kapur, pinus, dan dipenuhi tanaman
-                        tropis yang indah.
-                    </p>
-                </div>
-                <div
-                    class="bg-hitamK h-56 md:h-64 w-72 md:w-96 rounded-lg shadow-lg p-4 flex flex-col justify-center text-center flex-shrink-0 scroll-snap-align-start">
-                    <h2 class="font-sora text-white text-lg md:text-xl font-semibold">Malino Highlands</h2>
-                    <p class="leading-relaxed text-hitamF mt-2 text-sm md:text-base">
-                        Wisata kebun teh baru di Sulawesi Selatan yang juga menawarkan kesempatan untuk melihat
-                        hewan-hewan konservasi.
-                    </p>
+        <div class="relative m-5 md:m-10 md:ml-0">
+            <!-- Fade Shadow (Left) -->
+            <div id="fade-left"
+                class="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-hitam/40 to-transparent z-10 pointer-events-none hidden md:block">
+            </div>
+
+            <!-- Fade Shadow (Right) -->
+            <div id="fade-right"
+                class="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-hitam/40 to-transparent z-10 pointer-events-none hidden md:block">
+            </div>
+
+            <!-- Scrollable Content -->
+            <div id="scroll-container"
+                class="flex gap-5 md:gap-7 overflow-x-auto scrollbar-hide scroll-smooth scroll-snap-x"
+                data-aos="fade-up">
+                <div class="flex gap-5 md:gap-7 flex-nowrap">
+                    <div
+                        class="bg-hitamK h-56 md:h-64 w-72 md:w-96 rounded-lg shadow-lg p-4 flex flex-col justify-center text-center flex-shrink-0 scroll-snap-align-start">
+                        <h2 class="font-sora text-white text-lg md:text-xl font-semibold">Panorama Alam</h2>
+                        <p class="leading-relaxed text-hitamF mt-2 text-sm md:text-lg">
+                            Malino memiliki gunung-gunung yang kaya akan pemandangan batu kapur, pinus, dan dipenuhi
+                            tanaman tropis yang indah.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-hitamK h-56 md:h-64 w-72 md:w-96 rounded-lg shadow-lg p-4 flex flex-col justify-center text-center flex-shrink-0 scroll-snap-align-start">
+                        <h2 class="font-sora text-white text-lg md:text-xl font-semibold">Malino Highlands</h2>
+                        <p class="leading-relaxed text-hitamF mt-2 text-sm md:text-base">
+                            Wisata kebun teh baru di Sulawesi Selatan yang juga menawarkan kesempatan untuk melihat
+                            hewan-hewan konservasi.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const scrollContainer = document.getElementById("scroll-container");
+            const fadeLeft = document.getElementById("fade-left");
+            const fadeRight = document.getElementById("fade-right");
+
+            function updateShadows() {
+                if (scrollContainer.scrollLeft <= 0) {
+                    fadeLeft.style.display = "none";
+                } else {
+                    fadeLeft.style.display = "block";
+                }
+
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    fadeRight.style.display = "none";
+                } else {
+                    fadeRight.style.display = "block";
+                }
+            }
+
+            // Jalankan saat halaman dimuat
+            updateShadows();
+
+            // Jalankan setiap kali scroll
+            scrollContainer.addEventListener("scroll", updateShadows);
+        });
+        </script>
+
     </div>
 
     <div class="m-5 md:m-10 mt-20 md:mt-20" data-aos="fade-up">
@@ -146,7 +189,7 @@
                 <h2 class="text-2xl font-bold font-sora text-white">Malino Highland</h2>
                 <p class="text-putihT font-inter text-sm mt-4">
                     "Malino Highlands – Pesona Alam di Puncak Ketinggian! Nikmati keindahan alam pegunungan dengan
-                    hamparan kebun teh yang luas..."
+                    hamparan kebun teh yang luas...
                 </p>
                 <a href="{{route('wisata')}}" class="text-blue-500 font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
@@ -166,10 +209,10 @@
             <div class="bg-hitamK h-72 w-full rounded-lg p-6 relative shadow-lg">
                 <img src="images/profile.jpg" alt="Malino Highland"
                     class="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-40" />
-                <h2 class="text-2xl font-bold font-sora text-white">Air Terjun Takapala</h2>
+                <h2 class="text-2xl font-bold font-sora text-white">Hutan Pinus Malino</h2>
                 <p class="text-putihT font-inter text-sm mt-4">
-                    "Pesona Air Terjun Takapala - Nikmati keajaiban alam di Air Terjun Takapala, tempat di mana gemuruh
-                    air yang jatuh dari ketinggian menciptakan suasana damai..."
+                    "Nikmati udara segar, suasana tenang, dan keindahan alam di tengah rimbunnya pinus. Tempat sempurna
+                    untuk....
                 </p>
                 <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
@@ -191,8 +234,7 @@
                     class="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-40" />
                 <h2 class="text-2xl font-bold font-sora text-white">Air Terjun Takapala</h2>
                 <p class="text-putihT font-inter text-sm mt-4">
-                    "Pesona Air Terjun Takapala - Nikmati keajaiban alam di Air Terjun Takapala, tempat di mana gemuruh
-                    air yang jatuh dari ketinggian menciptakan suasana damai..."
+                    "Pesona Air Terjun Takapala – Keajaiban alam dengan gemuruh air yang menenangkan...
                 </p>
                 <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
@@ -215,7 +257,7 @@
                 <h2 class="text-2xl font-bold font-sora text-white">Sierra Sky View</h2>
                 <p class="text-putihT font-inter text-sm mt-4">
                     "Sierra Sky View - Pesona Alam dari Ketinggian! Rasakan pengalaman tak terlupakan di Sierra Sky
-                    View, tempat sempurna untuk menikmati keindahan panorama dari ketinggian..."
+                    View, tempat sempurna untuk menikmati keindahan panorama dari ketinggian...
                 </p>
                 <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
