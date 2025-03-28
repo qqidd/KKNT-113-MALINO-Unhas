@@ -5,18 +5,39 @@
 @section('content')
 
 <section>
-    <div class="bg-hitamk text-white min-h-screen flex items-center justify-center mt-20 px-4">
+    <div class="mx-10 bg-hitamk text-white min-h-screen flex items-center justify-center mt-20 px-4">
         <div class="container mx-auto py-12">
             <div class="mb-8">
                 <div class="flex items-center space-x-2 mb-10">
-                    <div class="w-16 h-1 bg-biru"></div>
-                    <div class="w-16 h-1 bg-hijau transform -rotate-45"></div>
-                    <div class="w-16 h-1 bg-biru"></div>
-                    <div class="w-16 h-1 bg-hijau transform -rotate-45"></div>
-                    <div class="w-16 h-1 bg-biru"></div>
-                    <div class="w-16 h-1 bg-hijau transform -rotate-45"></div>
-                    <div class="w-16 h-1 bg-biru"></div>
+                    <div class="w-16 h-1 bar bg-[#3498db]"></div>
+                    <div class="w-16 h-1 bar bg-[#2ecc71] transform -rotate-45"></div>
+                    <div class="w-16 h-1 bar bg-[#3498db]"></div>
+                    <div class="w-16 h-1 bar bg-[#2ecc71] transform -rotate-45"></div>
+                    <div class="w-16 h-1 bar bg-[#3498db]"></div>
+                    <div class="w-16 h-1 bar bg-[#2ecc71] transform -rotate-45"></div>
+                    <div class="w-16 h-1 bar bg-[#3498db]"></div>
                 </div>
+
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    let bars = document.querySelectorAll(".bar");
+                    let index = 0;
+
+                    setInterval(() => {
+                        let currentBar = bars[index];
+                        let currentColor = currentBar.style.backgroundColor;
+
+                        if (currentColor === "rgb(52, 152, 219)") { // Biru
+                            currentBar.style.backgroundColor = "#2ecc71"; // Hijau
+                        } else {
+                            currentBar.style.backgroundColor = "#3498db"; // Biru
+                        }
+
+                        index = (index + 1) % bars.length; // Ganti satu per satu
+                    }, 500);
+                });
+                </script>
+
                 <h1 class="text-5xl font-bold mt-20">Kontak Kami</h1>
                 <p class="text-gray-400 mt-4 text-lg">Apakah anda memiliki pencarian untuk kami atau umpan balik?
                     Silakan klik kategori yang paling sesuai dan isi formulir untuk menghubungi kami.</p>
@@ -82,10 +103,31 @@
                     </div>
                 </form>
             </div>
-            <div class="flex justify-end mt-10 pr-2 md:pr-40 lg:pr-80 xl:pr-[44rem]">
-                <div class="h-2 w-40 rounded-l bg-gradient-to-r from-blue-500 to-green-500"></div>
+            <div class="flex justify-end mt-10 pr-2 md:pr-40 lg:pr-80 xl:pr-[38rem]">
+                <div class="h-2 w-40 rounded-l bg-gradient-to-r from-blue-500 to-green-500 animate-gradient"></div>
             </div>
         </div>
     </div>
+    <!-- Tambahkan di dalam Blade animate-gradient -->
+    <style>
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientMove 3s linear infinite;
+    }
+    </style>
 </section>
 @endsection

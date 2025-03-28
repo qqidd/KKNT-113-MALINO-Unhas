@@ -1,63 +1,83 @@
 <nav x-data="{ open: false }" class="bg-hijau">
-    <!-- Sidebar -->
-    @if (!request()->routeIs('profile.show'))
-    <aside class="w-72 bg-hijau text-black min-h-screen p-4 fixed top-0 left-0 z-50">
-        <h2 class="text-3xl font-inter font-bold">Admin Panel</h2>
-        <ul class="text-2xl mt-16 space-y-4">
-            <li>
-                <a href="{{route('dashboard')}}"
-                    class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('dashboard') ? 'font-bold' : 'text-black' }} hover:text-biru">
-                    <i class="opacity-75 fas fa-mountain"></i>
-                    <span>Wisata</span>
-                </a>
-            </li>
-            <hr class="border-hitamH">
-            <li>
-                <a href="{{route('adgel')}}"
-                    class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adgel') ? 'font-bold' : 'text-black' }} hover:text-biru">
-                    <i class="opacity-75 fas fa-images"></i>
-                    <span>Galeri</span>
-                </a>
-            </li>
-            <hr class="border-hitamH">
-            <li>
-                <a href="{{route('adpro')}}"
-                    class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adpro') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
-                    <i class="opacity-75 fas fa-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <hr class="border-hitamH">
-            <li>
-                <a href="{{route('adkon')}}"
-                    class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adkon') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
-                    <i class="opacity-75 fas fa-phone"></i>
-                    <span>Kontak</span>
-                </a>
-            </li>
-            <hr class="border-hitamH">
-            <li>
-                <a href="{{route('adkan')}}"
-                    class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adkan') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
-                    <i class="opacity-75 fas fa-building"></i>
-                    <span>Kantor</span>
-                </a>
-            </li>
-            <div class="pt-10">
-                <p class="text-lg text-hitamK hover:text-blue-700 transition-colors duration-1000">
-                    KKN-T 113 UNHAS © 2024 Kel. Malino, Kec, Tinggimoncong, Kab. Gowa
-                </p>
-            </div>
-        </ul>
-    </aside>
-    @endif
+    <div x-data="{ open: false }" class="relative">
+        <!-- Tombol Toggle (Muncul Hanya di Mobile) -->
+        <button @click="open = true" class="p-2 text-white bg-blue-500 rounded-md m-3 fixed left-4 z-50 sm:hidden">
+            <!-- Ikon Hamburger -->
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+
+        <!-- Overlay untuk Menutup Sidebar -->
+        <div x-show="open" @click="open = false" class="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden"></div>
+
+        <!-- Sidebar -->
+        @if (!request()->routeIs('profile.show'))
+        <aside class="w-72 bg-hijau text-black min-h-screen p-4 fixed top-0 left-0 z-50 sm:translate-x-0"
+            :class="{'-translate-x-full': !open, 'translate-x-0': open}"
+            x-transition:enter="transition-transform duration-300" x-transition:enter-start="-translate-x-full"
+            x-transition:enter-end="translate-x-0" x-transition:leave="transition-transform duration-300"
+            x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
+
+            <h2 class="text-3xl font-inter font-bold">Admin Panel</h2>
+            <ul class="text-2xl mt-16 space-y-4">
+                <li>
+                    <a href="{{route('dashboard')}}"
+                        class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('dashboard') ? 'font-bold' : 'text-black' }} hover:text-biru">
+                        <i class="opacity-75 fas fa-mountain"></i>
+                        <span>Wisata</span>
+                    </a>
+                </li>
+                <hr class="border-hitamH">
+                <li>
+                    <a href="{{route('adgel')}}"
+                        class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adgel') ? 'font-bold' : 'text-black' }} hover:text-biru">
+                        <i class="opacity-75 fas fa-images"></i>
+                        <span>Galeri</span>
+                    </a>
+                </li>
+                <hr class="border-hitamH">
+                <li>
+                    <a href="{{route('adpro')}}"
+                        class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adpro') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
+                        <i class="opacity-75 fas fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <hr class="border-hitamH">
+                <li>
+                    <a href="{{route('adkon')}}"
+                        class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adkon') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
+                        <i class="opacity-75 fas fa-phone"></i>
+                        <span>Kontak</span>
+                    </a>
+                </li>
+                <hr class="border-hitamH">
+                <li>
+                    <a href="{{route('adkan')}}"
+                        class="flex items-center space-x-2 font-inter text-xl p-2 {{ request()->routeIs('adkan') ? 'font-bold' : 'text-black' }} hover:text-biru active:text-black active:font-bold">
+                        <i class="opacity-75 fas fa-building"></i>
+                        <span>Kantor</span>
+                    </a>
+                </li>
+                <div class="pt-10">
+                    <p class="text-lg text-hitamK hover:text-blue-700 transition-colors duration-1000">
+                        KKN-T 113 UNHAS © 2024 Kel. Malino, Kec, Tinggimoncong, Kab. Gowa
+                    </p>
+                </div>
+            </ul>
+        </aside>
+        @endif
+    </div>
+
 
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center ml-40">
+                <div class="shrink-0 flex items-center ml-16 md:ml-40">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{ asset('images/logomin.png') }}" alt="Logo" class="w-16 h-auto animasi-putar">
                     </a>
@@ -168,21 +188,6 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
-                </div>
-
-                <!-- Hamburger -->
-                <div class="-me-2 flex items-center sm:hidden">
-                    <button @click="open = ! open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                        <svg class="size-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                            <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>

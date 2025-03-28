@@ -19,7 +19,8 @@
             <p class="font-inter text-putihT mt-6 md:mt-10 text-lg md:text-xl px-1 ">Keindahan <span
                     class="text-merahRM font-bold">{{ $tugu->nama }}</span>.
             </p>
-            <p class="text-lg mt-3 font-inter text-putihT ml-10 text-justify leading-7">
+            <p
+                class="text-base md:text-lg mt-3 font-inter ml-10 text-putihT text-justify leading-relaxed tracking-tight hyphens-auto max-w-prose">
                 {{ $tugu->deskripsi }}
             </p> <!-- edit ini -->
         </div>
@@ -35,7 +36,7 @@
             </div>
         </div>
         <div class="flex justify-center md:justify-end mt-5" data-aos="fade-up">
-            <div class="h-2 w-40 rounded-lg bg-gradient-to-r from-merahRM to-white -mt-5">
+            <div class="h-2 w-40 rounded-lg bg-gradient-to-r from-merahRM to-white -mt-5 animate-gradient">
             </div>
             <!-- edit ini jika p dari selamat datang d tambahkakn -->
         </div>
@@ -89,6 +90,26 @@
             </a>
         </div>
     </div>
-</section>
+    <!-- Tambahkan di dalam Blade animate-gradient -->
+    <style>
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
 
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientMove 3s linear infinite;
+    }
+    </style>
+</section>
 @endsection

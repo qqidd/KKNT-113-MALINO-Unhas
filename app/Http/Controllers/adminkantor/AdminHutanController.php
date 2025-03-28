@@ -102,6 +102,6 @@ class AdminHutanController extends Controller
         Storage::delete($hutan->foto); // Hapus foto
         $hutan->delete();
 
-        return redirect()->route('layouts.kantor.adminhutan')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('layouts.kantor.adminhutan')->with('deleted', 'Data berhasil dihapus.');
     }
 }

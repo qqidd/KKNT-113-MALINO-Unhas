@@ -206,7 +206,7 @@
             <button type="submit" class="btn btn-submit">Update Foto</button>
 
             <!-- Tombol Kembali -->
-            <a href="{{ route('layouts.adkon') }}" class="btn btn-back">
+            <a href="{{ route('layouts.adpro') }}" class="btn btn-back">
                 <svg viewBox="0 0 24 24">
                     <path d="M15 19l-7-7 7-7"></path>
                 </svg>

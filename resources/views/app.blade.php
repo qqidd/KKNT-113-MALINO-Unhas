@@ -35,7 +35,7 @@
     <x-navbar />
 
     <main>
-        @yield('content')
+        @yield(section: 'content')
     </main>
 
     <x-footer />

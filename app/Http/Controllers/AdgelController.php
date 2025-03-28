@@ -49,7 +49,7 @@ class AdgelController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('layouts.adgel');
+        return redirect()->route('layouts.adgel')->with('success', 'Data berhasil ditambahkan!');
     }
     // Menampilkan form untuk edit foto
     public function edit($id)
@@ -82,7 +82,7 @@ class AdgelController extends Controller
 
         $foto->save();
 
-        return redirect()->route('layouts.adgel');
+        return redirect()->route('layouts.adgel')->with('success', 'Data berhasil diperbarui!');
     }
 
     // Menghapus data foto
@@ -94,7 +94,7 @@ class AdgelController extends Controller
         // Menghapus file gambar dari folder public/images
         unlink(storage_path('app/public/' . $foto->foto));
 
-        return redirect()->route('layouts.adgel');
+        return redirect()->route('layouts.adgel')->with('deleted', 'Data berhasil dihapus!');
     }
     
     

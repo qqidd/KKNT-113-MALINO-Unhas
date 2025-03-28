@@ -1,12 +1,12 @@
 <x-app-layout>
-
     <div class="font-sans antialiased ">
-        <div class="flex">
-            <div class="w-72 bg-hijau text-black min-h-screen p-4">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <div class="w-full md:w-72 bg-hijau text-black min-h-screen p-4 md:block hidden">
             </div>
 
             <!-- Main Content -->
-            <div class="flex-1 bg-hitam min-h-screen">
+            <div class="flex-1 bg-hitam min-h-screen p-4 md:p-0">
                 <main>
                     <div class="container mx-auto">
                         <!-- Notifikasi Sukses Tambah/Edit -->
@@ -55,72 +55,70 @@
                         });
                         </script>
                         <div class="container mx-auto">
-                            <div class="mt-10 m-10 text-white">
-                                <h1
-                                    class="text-4xl font-sora font-bold text-transparent text-white bg-clip-text leading-tight">
+                            <div class="mt-6 md:mt-10 m-4 md:m-10 text-white">
+                                <h1 class="text-3xl md:text-4xl font-sora font-bold">
                                     Kantor
                                 </h1>
                                 <div class="flex items-center gap-2">
-                                    <div class="h-1 w-32 rounded-lg bg-gradient-to-r from-hijau to-biru"></div>
-                                    /<span class="text-hijau font-bold">Office Database</span>
+                                    <div class="h-1 w-24 md:w-32 rounded-lg bg-gradient-to-r from-hijau to-biru"></div>
+                                    /<span class="text-hijau font-bold text-sm md:text-base">Office Database</span>
                                 </div>
                             </div>
-                            <div class="m-10 flex space-x-10">
-                                <a href="{{route('kantor.adminhutan')}}" class="flex items-center space-x-2 p-2 group">
+                            <div class="m-10 flex flex-wrap gap-4">
+                                <a href="{{ route('kantor.adminhutan') }}"
+                                    class="flex w-full sm:w-auto items-center space-x-2 p-1 md:p-2 group text-center sm:text-left">
                                     <i
-                                        class="fas fa-tree text-hijau text-3xl transition duration-300 group-hover:text-biru"></i>
+                                        class="fas fa-tree text-hijau text-2xl md:text-3xl transition duration-300 group-hover:text-biru"></i>
                                     <span
-                                        class="text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
+                                        class="text-lg md:text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
                                         Hutan Pinus Malino
                                     </span>
                                 </a>
-                                <div class="flex items-center space-x-2">
-                                    <a href="{{route('kantor.adminstroberi')}}"
-                                        class="flex items-center space-x-2 p-2 group">
-                                        <i
-                                            class="fas fa-seedling text-hijau text-3xl transition duration-300 group-hover:text-biru"></i>
-                                        <span
-                                            class="text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
-                                            Risstroberi Batulapisi
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <a href="{{route('kantor.admintugu')}}"
-                                        class="flex items-center space-x-2 p-2 group">
-                                        <i
-                                            class="fas fa-landmark text-hijau text-3xl transition duration-300 group-hover:text-biru"></i>
-                                        <span
-                                            class="text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
-                                            Tugu Malino
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <a href="{{route('kantor.adminpasar')}}"
-                                        class="flex items-center space-x-2 p-2 group">
-                                        <i
-                                            class="fas fa-store text-hijau text-3xl transition duration-300 group-hover:text-biru"></i>
-                                        <span
-                                            class="text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
-                                            Pasar Malino
-                                        </span>
-                                    </a>
-                                </div>
+                                <a href="{{ route('kantor.adminstroberi') }}"
+                                    class="flex w-full sm:w-auto items-center space-x-2 p-1 md:p-2 group text-center sm:text-left">
+                                    <i
+                                        class="fas fa-seedling text-hijau text-2xl md:text-3xl transition duration-300 group-hover:text-biru"></i>
+                                    <span
+                                        class="text-lg md:text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
+                                        Risstroberi Batulapisi
+                                    </span>
+                                </a>
+                                <a href="{{ route('kantor.admintugu') }}"
+                                    class="flex w-full sm:w-auto items-center space-x-2 p-1 md:p-2 group text-center sm:text-left">
+                                    <i
+                                        class="fas fa-landmark text-hijau text-2xl md:text-3xl transition duration-300 group-hover:text-biru"></i>
+                                    <span
+                                        class="text-lg md:text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
+                                        Tugu Malino
+                                    </span>
+                                </a>
+                                <a href="{{ route('kantor.adminpasar') }}"
+                                    class="flex w-full sm:w-auto items-center space-x-2 p-1 md:p-2 group text-center sm:text-left">
+                                    <i
+                                        class="fas fa-store text-hijau text-2xl md:text-3xl transition duration-300 group-hover:text-biru"></i>
+                                    <span
+                                        class="text-lg md:text-xl font-bold text-white transition duration-300 group-hover:text-biru hover:underline">
+                                        Pasar Malino
+                                    </span>
+                                </a>
                             </div>
-                            <div class="mt-10 m-10 mb-6 flex justify-end">
-                                <form action="{{ route('adkan') }}" method="GET" class="flex items-center space-x-2">
+
+                            <div class="mt-6 md:mt-10 m-4 md:m-10 flex justify-center md:justify-end">
+                                <form action="{{ route('adkan') }}" method="GET"
+                                    class="flex items-center space-x-2 w-full md:w-auto">
                                     <input type="text" name="search" placeholder="Cari Foto..."
                                         value="{{ request('search') }}"
-                                        class="px-4 py-2 border rounded w-64 bg-hitam text-white placeholder-white">
+                                        class="px-3 py-2 border rounded w-full md:w-64 bg-hitam text-white placeholder-white text-sm">
                                     <button type="submit"
-                                        class="px-4 py-2 bg-blue-500 text-white rounded flex items-center">
-                                        <i class="fa fa-search mr-2"></i> Cari
+                                        class="px-3 py-2 bg-biru text-white rounded flex items-center text-sm">
+                                        <i class="fa fa-search mr-1"></i> Cari
                                     </button>
                                 </form>
                             </div>
-                            <div class="overflow-x-auto max-w-[1200px] mx-auto">
-                                <table class="w-full border border-putihA">
+
+                            <div class="mt-6 overflow-x-auto max-w-[1200px] mx-auto scrollbar-hide scroll-smooth
+                                scroll-snap-x">
+                                <table class="w-full border border-putihA text-sm md:text-base">
                                     <thead>
                                         <tr class="bg-hitamKTK">
                                             <th class="p-2 border border-putihA text-white font-bold font-inter">NO</th>
@@ -148,7 +146,7 @@
                                     @foreach ($kantors as $gambar)
                                     <tbody>
                                         <tr class="bg-gray-hitamKTK">
-                                            <td class="p-6 text-2xl border border-putihA text-center text-white">
+                                            <td class="p-6 text-xl border border-putihA text-center text-white">
                                                 {{ $loop->iteration }}</td>
                                             <td class="p-6 border border-putihA text-center">
                                                 <div class="w-16 h-16 bg-putihA rounded-full mx-auto overflow-hidden">
@@ -160,8 +158,10 @@
                                             <td class="p-2 border pl-4 border-putihA text-white">{{ $gambar->nama }}
                                             </td>
                                             <td class="p-2 border pl-4 border-putihA text-white">
-                                                {{ $gambar->deskripsi }}
+                                                <span class="md:hidden">{{ Str::limit($gambar->deskripsi, 50) }}</span>
+                                                <span class="hidden md:block">{{ $gambar->deskripsi }}</span>
                                             </td>
+
                                             <td class="p-2 border pl-4 border-putihA text-white">{{ $gambar->kategori }}
                                             </td>
                                             <td class="p-2 border border-putihA text-center space-x-2">
@@ -189,9 +189,9 @@
                                 </table>
                             </div>
 
-                            <div class="flex m-14 justify-end mt-12">
+                            <div class="flex m-4 md:m-14 justify-end md:justify-end mt-8 md:mt-12">
                                 <a href="{{ route('kantor_foto.create') }}"
-                                    class="bg-blue-500 text-white px-4 py-2 rounded flex items-center shadow-lg transition-transform duration-300 hover:scale-110 hover:rotate-3 hover:text-hijau">
+                                    class="bg-blue-500 text-white px-3 py-2 rounded flex items-center shadow-lg hover:scale-110 hover:rotate-3 hover:text-hijau text-xs md:text-base">
                                     <i class="fa fa-plus mr-1"></i> Tambah Data
                                 </a>
                             </div>

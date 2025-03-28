@@ -14,7 +14,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 m-3 sm:m-5 md:m-10 mt-6 sm:mt-10 md:mt-20"
         data-aos="fade-down">
         <div class="bg-hitamK w-full rounded-lg shadow-lg p-4 sm:p-6">
-            <h2 class="font-inter font-bold text-lg sm:text-xl text-white text-center mb-4 sm:mb-5 text-shadow-md">
+            <h2 class="font-inter font-bold text-lg sm:text-xl text-white    text-center mb-4 sm:mb-5 text-shadow-md">
                 Kantor Lurah Malino Gowa
             </h2>
             <p
@@ -43,7 +43,7 @@
         </div>
         @foreach ($kantors1 as $profil)
         <div
-            class="bg-hitam h-auto sm:h-52 md:h-72 lg:h-80 w-full sm:w-5/6 md:w-3/4 lg:w-2/3 mx-auto rounded-lg shadow-lg flex items-center justify-center overflow-hidden group">
+            class="bg-hitam h-auto sm:h-52 md:h-72 lg:h-80 w-full sm:w-5/6 md:w-3/4 lg:w-2/3 mx-auto rounded-lg flex items-center justify-center overflow-hidden group">
             <img src="{{ asset('storage/' . $profil->foto) }}" alt="GambarProfil"
                 class="max-h-full max-w-full object-scale-down transition-transform duration-500 group-hover:scale-105">
         </div>
@@ -53,35 +53,36 @@
 
     <div class="mt-10 md:mt-20 mx-5 md:mx-10" data-aos="fade-left">
         <h3 class="text-white font-inter text-l font-bold">Deskripsi</h3>
-        <p class="text-putihT font-inter p-2 leading-8 text-justify mr-36">Kantor Lurah Malino melayani masyarakat
-            dalam
-            memenuhi
-            kebutuhan
-            administrasi kependudukan. Termasuk di antaranya perizinan-perizinan seperti pekerjaan umum, perizinan umum
-            kelurahan, perizinan pendidikan, kesehatan warga kelurahan Kantor Lurah Malino, perumahan, penataan ruang,
-            perhubungan, lingkungan hidup, pertanahan yang menjadi kewenangan daerah serta pemberdayaan perempuan dan
-            perlindungan anak. <br>
-            <span class="text-hijau">Secara lebih
-                detail</span> kantor kelurahan atau lurah yang berada di wilayah
-            Kabupaten
-            Gowa
-            ini
-            melayani izin
-            untuk pengurusan surat keterangan domisili, pengurusan NPWP, Surat Kelakuan Baik, Surat Pindah Keluar, Surat
+        <p
+            class="text-putihT font-inter p-2 leading-7 md:leading-8 text-justify md:mr-60 hyphens-auto max-w-full text-sm md:text-lg">
+            Kantor Lurah Malino melayani masyarakat dalam memenuhi kebutuhan administrasi kependudukan. Termasuk di
+            antaranya
+            perizinan-perizinan seperti pekerjaan umum, perizinan umum kelurahan, perizinan pendidikan, kesehatan warga
+            kelurahan
+            Kantor Lurah Malino, perumahan, penataan ruang, perhubungan, lingkungan hidup, pertanahan yang menjadi
+            kewenangan daerah
+            serta pemberdayaan perempuan dan <span class="text-hijau">perlindungan anak</span>.
+            <br>
+            Secara lebih detail kantor kelurahan atau lurah yang berada di wilayah
+            Kabupaten Gowa ini
+            melayani izin untuk pengurusan surat keterangan domisili, pengurusan NPWP, Surat Kelakuan Baik, Surat Pindah
+            Keluar, Surat
             Keterangan Tidak Mampu Kantor Lurah Malino, Surat Keterangan Usaha, Surat Usaha Mikro, dan Surat Pernyataan
-            Miskin, surat domisili sementara dan lainnya.
+            Miskin, surat
+            domisili sementara dan lainnya.
             Segera kunjungi Kantor Lurah Malino ini untuk informasi lainnya terkait administrasi kependudukan, acara
-            rakyat, info penyuluhan pada daerahnya. Anda juga bisa menghubungi kontak telepon dengan mengunjungi website
-            kelurahan.
-            Kategori: <span class="text-biru">Kantor Pemerintahan,Gowa</span>.
+            rakyat, info
+            penyuluhan pada daerahnya. Anda juga bisa menghubungi kontak telepon dengan mengunjungi website kelurahan.
+            Kategori: <span class="text-biru">Kantor Pemerintahan, Gowa</span>.
         </p>
     </div>
-    <div class="flex flex-row-reverse mx-10 md:mx-40" data-aos="fade-up">
-        <div class="m-10 h-2 w-40 rounded-l bg-gradient-to-r from-blue-500 to-green-500 mt-10"></div>
+    <div class="flex flex-row-reverse mx-0 md:mx-64" data-aos="fade-up">
+        <div class="m-8 h-2 w-40 rounded-l bg-gradient-to-r from-biru to-hijau mt-10 animate-gradient"></div>
     </div>
 
     <div>
-        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold font-sora text-white mt-20 m-10" data-aos="fade-down">
+        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold font-sora text-white mt-10 mx-5 md:mx-10"
+            data-aos="fade-down">
             Tempat Wisata Malino
         </h1>
         @foreach ($kantors2 as $wisata)
@@ -112,7 +113,7 @@
                         {{ $wisata->nama }}
                     </a>
                 </h2>
-                <p class="text-white text-sm sm:text-base mt-2 text-justify max-w-md">
+                <p class="text-white text-sm sm:text-base mt-2 text-justify max-w-md hyphens-auto sm:mr-0">
                     {{ Str::limit($wisata->deskripsi, 70, '...') }}
                     <a href="{{ route($route) }}" class="text-blue-500">Selengkapnya</a>
                 </p>
@@ -120,6 +121,26 @@
         </div>
         @endforeach
     </div>
+    <!-- Tambahkan di dalam Blade animate-gradient -->
+    <style>
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
 
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientMove 3s linear infinite;
+    }
+    </style>
 </section>
 @endsection

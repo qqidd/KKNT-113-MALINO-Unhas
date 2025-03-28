@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,22 +19,30 @@
 
 #mobile-menu.show {
     transform: translateY(0);
-    opacity: 1;
+    opacity: 1;     
     visibility: visible;
 }
 
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* Untuk IE dan Edge */
-    scrollbar-width: none;  /* Untuk Firefox */
+    -ms-overflow-style: none; /* Untuk IE dan Edge */
+    scrollbar-width: none; /* Untuk Firefox */
 }
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;  /* Untuk Chrome, Safari, dan Opera */
+    display: none; /* Untuk Chrome, Safari, dan Opera */
 }
 
 .border-gradient {
     border-width: 4px;
     border-style: solid;
-    border-image: linear-gradient(to right, theme('colors.biru'), theme('colors.hijau')) 1;
+    border-image: linear-gradient(
+            to right,
+            theme("colors.biru"),
+            theme("colors.hijau")
+        )
+        1;
 }
 
-
+.text-justify {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

@@ -102,6 +102,6 @@ class AdminStroberiController extends Controller
         Storage::delete($stroberi->foto); // Hapus foto
         $stroberi->delete();
 
-        return redirect()->route('layouts.kantor.adminstroberi')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('layouts.kantor.adminstroberi')->with('deleted', 'Data berhasil dihapus.');
     }
 }

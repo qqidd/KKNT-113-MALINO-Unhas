@@ -12,9 +12,20 @@
                 <p class="text-lg mt-4">Kami di website ini menghargai privasi Anda. Kebijakan Privasi ini menjelaskan
                     bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat
                     mengunjungi atau menggunakan situs web kami.</p>
-                <div class="border-t-4 border-hijau w-1/4 mt-4"></div>
+                <div id="glow-border" class="border-t-4 border-green-500 w-1/4 mt-4 transition-all duration-500"></div>
                 <div class="absolute top-0 right-0 border-t-4 border-r-4 border-biru w-16 h-16"></div>
             </div>
+            <script>
+            function addGlowEffect() {
+                const border = document.getElementById("glow-border");
+                const box = document.getElementById("glow-box");
+                setInterval(() => {
+                    border.classList.toggle("shadow-[0_0_15px_#10b981]");
+                    box.classList.toggle("shadow-[0_0_15px_#3b82f6]");
+                }, 1000);
+            }
+            addGlowEffect();
+            </script>
 
             <div class="relative bg-hitamKTK p-8 rounded-lg shadow-lg w-full max-w-3xl min-h-[600px]">
                 <h2 class="text-xl font-semibold mb-4">1. Informasi yang Kami Kumpulkan</h2>

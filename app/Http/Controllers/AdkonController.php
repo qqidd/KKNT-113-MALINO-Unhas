@@ -77,6 +77,6 @@ class AdkonController extends Controller
     public function destroy($id)
     {
         KontakPesan::destroy($id);
-        return redirect()->route('layouts.adkon')->with('success', 'Pesan berhasil dihapus!');
+        return redirect()->route('layouts.adkon')->with('deleted', 'Pesan berhasil dihapus!');
     }
 }

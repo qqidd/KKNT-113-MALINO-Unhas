@@ -1,4 +1,4 @@
-<header class="font-inter text-stone-300 bg-hitam">
+<header class="relative font-inter text-stone-300 bg-hitam">
     <nav class="flex items-center justify-between px-5 md:px-10 py-4 relative">
         <!-- Logo -->
         <div class="text-white font-sora text-xl md:text-2xl font-bold">

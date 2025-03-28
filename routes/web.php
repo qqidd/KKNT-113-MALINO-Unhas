@@ -24,6 +24,11 @@ use App\Http\Controllers\Adminkantor\AdminStroberiController;
 use App\Http\Controllers\Adminkantor\AdminTuguController;
 use App\Http\Controllers\Adminkantor\AdminPasarController;
 
+use App\Http\Controllers\ErrorController;
+use App\Http\Middleware\ValidateJson;
+use Illuminate\Http\Request;
+use App\Http\Middleware\UnauthorizedMiddleware;
+
 Route::get('/', function () {
     return view('layout.home');
 });
@@ -39,6 +44,7 @@ Route::get('/pasar', [PasarController::class,'index'])->name('pasar');
 Route::get('/kontak', [KontakController::class,'index'])->name('kontak'); 
 Route::get('/layanan', [LayananController::class,'index'])->name('layanan'); 
 Route::get('/kebijakan', [KebijakanController::class,'index'])->name('kebijakan'); 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -129,9 +135,59 @@ Route::middleware([
         Route::delete('/{pasar}', [AdminPasarController::class, 'destroy'])->name('kantor.pasar_foto.destroy'); // Hapus data
     });
     
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    })->middleware('can:admin');
+
+    
 });
 
 Route::post('/kontak_pesan', [KontakController::class, 'store'])->name('kontak_pesan.store');
 Route::get('/admin/kontak_pesan', [KontakController::class, 'index'])->name('layout.kontak')->middleware('auth');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/', [KelurahanController::class, 'index'])->name('kelurahan');
+
+
+// Route untuk error 400 (Bad Request)
+Route::get('/bad-request', [ErrorController::class, 'badRequest'])->name('error.400');
+
+// Route untuk error 401 (Unauthorized)
+Route::get('/unauthorized', function () {
+    abort(401); // Menyebabkan error 401
+});
+
+// Route untuk error 403 (Forbidden)
+Route::get('/forbidden', function () {
+    return response()->view('errors.403', [], 403); // Mengarahkan ke tampilan 403
+});
+
+// Route untuk error 404 (Not Found)
+Route::get('/not-found', [ErrorController::class, 'notFound'])->name('error.404');
+
+// Route untuk error 405 (Method Not Allowed)
+Route::get('/test-405', [ErrorController::class, 'methodNotAllowed'])->name('error.405');
+
+// Route untuk error 408 (Request Timeout)
+Route::get('/test-408', [ErrorController::class, 'requestTimeout'])->name('error.408');
+
+// Route untuk menguji timeout dengan durasi 6 detik
+Route::get('/test-timeout', function (Request $request) {
+    ob_start();
+    echo "Menunggu timeout...";
+    ob_flush();
+    flush();
+    sleep(6); // Simulasi timeout setelah 6 detik
+    abort(408); // Memicu error 408
+});
+
+// Route untuk error 503 (Service Unavailable)
+Route::get('/test-503', [ErrorController::class, 'serviceUnavailable'])->name('error.503');
+
+// Route untuk langsung memicu error 503
+Route::get('/service-down', function () {
+    abort(503); // Memicu error 503
+});
+
+// Route fallback untuk menangani rute yang tidak ditemukan (error 404)
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404); // Mengarah ke halaman error 404
+});

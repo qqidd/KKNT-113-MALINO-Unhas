@@ -1,9 +1,10 @@
 <x-app-layout>
     <div class="font-sans antialiased">
-        <div class="flex">
-            <div class="w-72 bg-hijau text-black min-h-screen p-4"></div>
-
-            <div class="flex-1 bg-hitam min-h-screen">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <div class="w-full md:w-72 bg-hijau text-black min-h-screen p-4 md:block hidden"></div>
+            <!-- Main Content -->
+            <div class="flex-1 bg-hitam min-h-screen p-4 md:p-0">
                 <main>
                     <div class="container mx-auto">
                         <!-- Notifikasi Sukses Tambah/Edit -->
@@ -52,9 +53,8 @@
                         });
                         </script>
 
-                        <div class="mt-10 m-10 text-white">
-                            <h1
-                                class="text-4xl font-sora font-bold text-transparent text-white bg-clip-text leading-tight">
+                        <div class="mt-6 md:mt-10 m-4 md:m-10 text-white">
+                            <h1 class="text-3xl md:text-4xl font-sora font-bold text-white bg-clip-text leading-tight">
                                 Profil
                             </h1>
                             <div class="flex items-center gap-2">
@@ -63,8 +63,9 @@
                             </div>
                         </div>
 
-                        <div class="overflow-x-auto max-w-[1200px] mx-auto">
-                            <table class="w-full border border-putihA">
+                        <div
+                            class="mt-6 overflow-x-auto  max-w-[1200px] mx-auto scrollbar-hide scroll-smooth scroll-snap-x">
+                            <table class="w-full border border-putihA text-sm md:text-base">
                                 <thead>
                                     <tr class="bg-hitamKTK">
                                         <th class="p-2 border border-putihA text-white font-bold font-inter">NO</th>
@@ -86,16 +87,19 @@
                                 @foreach ($contents as $gambar)
                                 <tbody>
                                     <tr class="bg-gray-hitamKTK">
-                                        <td class="p-6 text-2xl border border-putihA text-center text-white">
+                                        <td class="p-6 border border-putihA text-center text-white">
                                             {{ $loop->iteration }}</td>
                                         <td class="p-6 border border-putihA text-center">
                                             <div class="w-16 h-16 bg-putihA rounded-full mx-auto overflow-hidden">
                                                 <img src="{{ Storage::url($gambar->foto) }}" alt="{{ $gambar->nama }}"
-                                                    class="w-full h-full rounded-full object-cover">
+                                                    class="w-full h-full object-cover">
                                             </div>
                                         </td>
                                         <td class="p-2 border pl-4 border-putihA text-white">{{ $gambar->nama }}</td>
-                                        <td class="p-2 border pl-4 border-putihA text-white">{{ $gambar->deskripsi }}
+                                        <td
+                                            class="p-2 border pl-4 border-putihA text-white max-w-[300px] break-words overflow-hidden">
+                                            <span class="md:hidden">{{ Str::limit($gambar->deskripsi, 50) }}</span>
+                                            <span class="hidden md:block">{{ $gambar->deskripsi }}</span>
                                         </td>
                                         <td class="p-2 border pl-4 border-putihA text-white">{{ $gambar->kategori }}
                                         </td>
@@ -123,9 +127,9 @@
                             </table>
                         </div>
 
-                        <div class="flex m-14 justify-end mt-12">
+                        <div class="flex m-4 md:m-14 justify-end md:justify-end mt-8 md:mt-12">
                             <a href="{{ route('profil_foto.create') }}"
-                                class="bg-blue-500 text-white px-4 py-2 rounded flex items-center shadow-lg transition-transform duration-300 hover:scale-110 hover:rotate-3 hover:text-hijau">
+                                class="bg-blue-500 text-white px-3 py-2 rounded flex items-center shadow-lg hover:scale-110 hover:rotate-3 hover:text-hijau text-xs md:text-base">
                                 <i class="fa fa-plus mr-1"></i> Tambah Data
                             </a>
                         </div>

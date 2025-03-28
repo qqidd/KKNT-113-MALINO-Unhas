@@ -11,13 +11,14 @@ export default {
         './resources/views/**/*.blade.php',
         './resources/**/*.{html,js,php}', // Atur lokasi file Anda yang menggunakan tailwind
         './vendor/**/*.{html,js}', // Jika menggunakan Laravel atau framework lainnya
+        './resources/views/layouts/kantor/**/*.blade.php', // Tambahkan ini
     ],
     safelist: [
         'fa-solid',
         'fa-home',
         'fa-user',
         'fa-envelope',
-        'fa-phone' // Tambahkan ikon lain yang digunakan
+        'fa-phone', // Tambahkan ikon lain yang digunakan
     ],
 
     theme: {

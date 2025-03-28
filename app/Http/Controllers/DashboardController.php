@@ -51,7 +51,7 @@ class DashboardController extends Controller
             'link_maps' => $request->link_maps, // Simpan link
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Data berhasil ditambahkan!');
     }
 
     // Menampilkan form untuk edit foto
@@ -87,7 +87,7 @@ class DashboardController extends Controller
 
         $foto->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Data berhasil diperbarui!');
     }
 
     // Menghapus data foto
@@ -99,6 +99,6 @@ class DashboardController extends Controller
         // Menghapus file gambar dari folder public/images
         unlink(storage_path('app/public/' . $foto->foto));
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('deleted', 'Data berhasil dihapus!');
     }
 }

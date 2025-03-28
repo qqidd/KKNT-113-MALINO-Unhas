@@ -101,6 +101,6 @@ class AdminTuguController extends Controller
         Storage::delete($tugu->foto); // Hapus foto
         $tugu->delete();
 
-        return redirect()->route('layouts.kantor.admintugu')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('layouts.kantor.admintugu')->with('deleted', 'Data berhasil dihapus.');
     }
 }

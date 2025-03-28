@@ -24,21 +24,22 @@
     </div>
 
     @foreach ($contents1 as $content)
-    <div class="flex items-center space-x-6 bg-hitam p-6 rounded-lg mt-32 m-10 scale-90 md:scale-100">
-        <!-- Gradient Bingkai Bundar -->
-        <div class="relative w-36 h-36 md:w-48 md:h-48 ml-[-65px] md:ml-0" data-aos="zoom-in">
-            <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-biru via-hijau to-teal-500"></div>
-            <div class="relative rounded-full w-36 h-36 md:w-48 md:h-48 overflow-hidden">
+    <div
+        class="flex items-center space-x-4 md:space-x-6 bg-hitam p-4 md:p-6 rounded-lg mt-20 md:mt-32 m-5 md:m-10 scale-95 md:scale-100">
+        <div class="relative w-32 h-32 md:w-48 md:h-48" data-aos="zoom-in">
+            <div
+                class="absolute -inset-1 rounded-full bg-gradient-to-r from-biru via-hijau to-teal-500 animate-gradient">
+            </div>
+            <div class="relative rounded-full w-32 h-32 md:w-48 md:h-48 overflow-hidden">
                 <img src="{{ asset('storage/' . $content->foto) }}" alt="{{ $content->nama }}"
                     class="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-300">
             </div>
         </div>
 
-        <!-- Deskripsi -->
-        <div class="text-white font-inter max-w-sm md:max-w-lg lg:max-w-xl leading-relaxed space-y-2"
+        <div class="text-white font-inter max-w-xs md:max-w-lg lg:max-w-xl leading-relaxed space-y-2"
             data-aos="zoom-in">
-            <h1 class="text-xl md:text-2xl font-bold">{{ $content->nama }}</h1>
-            <p class="text-base md:text-lg text-justify line-clamp-4 md:line-clamp-none">
+            <h1 class="text-lg md:text-2xl font-bold">{{ $content->nama }}</h1>
+            <p class="text-xs md:text-base leading-6 md:leading-8 max-w-xs md:max-w-2xl mx-0 md:mx-0">
                 {{ $content->deskripsi }}
             </p>
         </div>
@@ -46,10 +47,10 @@
     @endforeach
 
     <div class="grid grid-cols-1 md:grid-cols-2 m-5 md:m-10 mt-10 md:mt-20 gap-6">
-        <!-- Deskripsi -->
         <div class="text-white max-w-2xl" data-aos="fade-up">
             <h1 class="text-xl md:text-3xl font-sora mt-5 md:mt-10 font-bold">Wisata Malino</h1>
-            <p class="leading-7 md:leading-8 font-inter text-putihT mt-4 text-base md:text-lg">
+            <p
+                class="leading-7 md:leading-9 font-inter text-putihT mt-4 text-sm md:text-lg text-justify md:text-left max-w-xs md:max-w-2xl mx-10 md:mx-0">
                 Malino memiliki beragam tempat <span class="text-hijau">wisata</span>, mulai dari panorama alam
                 dengan udara sejuk khas pegunungan hingga wahana permainan. Wilayah Malino juga kaya akan tanaman khas
                 pegunungan, seperti hutan pinus, kebun teh, anggur, agrowisata stroberi, dan lain sebagainya.
@@ -57,7 +58,6 @@
             </p>
         </div>
 
-        <!-- Kartu Wisata -->
         <div class="flex gap-5 md:gap-7 m-5 md:m-10 md:ml-0 overflow-x-auto scrollbar-hide scroll-smooth scroll-snap-x"
             data-aos="fade-up">
             <div class="flex gap-5 md:gap-7 flex-nowrap">
@@ -82,14 +82,13 @@
     </div>
 
     <div class="m-5 md:m-10 mt-20 md:mt-20" data-aos="fade-up">
-        <h1 class="text-2xl md:text-4xl font-bold font-sora text-white mt-5 md:mt-10 md:text-left">
+        <h1 class="text-xl md:text-4xl font-bold font-sora text-white mt-5 md:mt-20 md:text-left">
             Tempat Wisata Malino
         </h1>
         @foreach ($contents2 as $content)
-        <div class="flex flex-row flex-wrap md:flex-nowrap gap-3 md:gap-5 mt-5 md:mt-10" data-aos="fade-up">
-
+        <div class="flex flex-wrap md:flex-nowrap gap-3 md:gap-5 mt-10 md:mt-10" data-aos="fade-up">
             <!-- Gambar -->
-            <a href="{{ route('kelurahan', $content->id) }}" class="flex-shrink-0">
+            <a href="{{ route('kelurahan', $content->id) }}" class="flex-shrink-0 mx-auto md:mx-0">
                 <div class="bg-hitamK h-52 md:h-72 w-60 md:w-96 rounded-lg relative shadow-lg overflow-hidden">
                     <img src="{{ asset('storage/' . $content->foto) }}" alt="{{ $content->nama }}"
                         class="w-full h-full object-cover rounded-lg transform transition-transform duration-300 hover:scale-110">
@@ -112,31 +111,33 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Text di samping gambar saat Mobile & Desktop -->
-            <div class="flex-1">
+            <div class="w-full md:w-[420px] md:flex-2 text-center md:text-left mt-3 md:mt-2">
                 <h2 class="text-lg md:text-2xl font-bold text-white font-sora">
                     <a class="hover:text-hijau transition-colors duration-300">{{ $content->nama }}</a>
                 </h2>
-                <p class="text-putihT font-inter mt-1 md:mt-2 text-justify text-xs md:text-base max-w-xs md:max-w-lg">
+                <p
+                    class="text-putihT font-inter mt-1 md:mt-2 text-justify text-xs md:text-base max-w-xs md:max-w-lg mx-auto md:mx-0">
                     {{ $content->deskripsi }}
                 </p>
             </div>
 
         </div>
         @endforeach
-        <div class="flex mt-3 md:mt-4" data-aos="zoom-in">
-            <a href="{{route('kelurahan')}}"
-                class="bg-hitamK text-hijau px-3 md:px-4 py-1.5 md:py-2 rounded-lg flex items-center gap-1 md:gap-2 text-sm md:text-base font-sora hover:text-biru transition-colors duration-300">
-                <span
-                    class="material-icons text-hijau hover:text-biru transition-colors duration-300 text-base md:text-lg">menu</span>
+
+        <div class="flex mt-4 pl-4 md:pl-0" data-aos="zoom-in">
+            <a href="{{route('kelurahan')}}" class="bg-hitamK text-hijau px-3 py-1 md:px-4 md:py-2 rounded-lg flex items-center gap-2 font-sora 
+        text-sm md:text-base hover:text-biru transition-colors duration-300">
+                <span class="material-icons text-hijau hover:text-biru transition-colors duration-300">
+                    menu
+                </span>
                 See More
             </a>
         </div>
+
     </div>
 
     <div class="m-10" data-aos="fade-left">
-        <h1 class="text-4xl font-bold font-sora text-white mt-20">Populer Tinggimoncong</h1>
+        <h1 class="text-xl md:text-3xl font-bold font-sora text-white mt-20">Populer Tinggimoncong</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10">
 
             <div class="bg-hitamK h-72 w-full rounded-lg p-6 relative shadow-lg">
@@ -170,7 +171,7 @@
                     "Pesona Air Terjun Takapala - Nikmati keajaiban alam di Air Terjun Takapala, tempat di mana gemuruh
                     air yang jatuh dari ketinggian menciptakan suasana damai..."
                 </p>
-                <a href="{{route('wisata')}}" class="text-blue-500 font-semibold mt-2 inline-block relative z-10">Baca
+                <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
                 <div class="absolute bottom-4 left-6 flex items-center gap-3">
                     <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -179,7 +180,7 @@
                     <div class="relative w-8 h-8 rounded-full bg-white overflow-hidden">
                         <img src="{{ asset('images/logohitam.png') }}" alt="Gambar" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center text-yellow-400">
+                    <div class="flex items-center text-white">
                         <span class="text-sm font-inter text-white ml-2">Tourist attraction</span>
                     </div>
                 </div>
@@ -193,7 +194,7 @@
                     "Pesona Air Terjun Takapala - Nikmati keajaiban alam di Air Terjun Takapala, tempat di mana gemuruh
                     air yang jatuh dari ketinggian menciptakan suasana damai..."
                 </p>
-                <a href="{{route('wisata')}}" class="text-blue-500 font-semibold mt-2 inline-block relative z-10">Baca
+                <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
                 <div class="absolute bottom-4 left-6 flex items-center gap-3">
                     <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -202,7 +203,7 @@
                     <div class="relative w-8 h-8 rounded-full bg-white overflow-hidden">
                         <img src="{{ asset('images/logohitam.png') }}" alt="Gambar" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center text-yellow-400">
+                    <div class="flex items-center text-white">
                         <span class="text-sm font-inter text-white ml-2">Tourist attraction</span>
                     </div>
                 </div>
@@ -216,7 +217,7 @@
                     "Sierra Sky View - Pesona Alam dari Ketinggian! Rasakan pengalaman tak terlupakan di Sierra Sky
                     View, tempat sempurna untuk menikmati keindahan panorama dari ketinggian..."
                 </p>
-                <a href="{{route('wisata')}}" class="text-blue-500 font-semibold mt-2 inline-block relative z-10">Baca
+                <a href="{{route('wisata')}}" class="text-biru font-semibold mt-2 inline-block relative z-10">Baca
                     Selengkapnya...</a>
                 <div class="absolute bottom-4 left-6 flex items-center gap-3">
                     <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -233,13 +234,35 @@
         </div>
 
         <div class="flex mt-4" data-aos="zoom-in">
-            <a href="{{route('wisata')}}"
-                class="bg-hitamK text-hijau px-4 py-2 rounded-lg flex items-center gap-2 font-sora hover:text-biru transition-colors duration-300">
-                <span class="material-icons text-hijau hover:text-biru transition-colors duration-300">menu</span>
+            <a href="{{route('wisata')}}" class="bg-hitamK text-hijau px-3 py-1 md:px-4 md:py-2 rounded-lg flex items-center gap-2 font-sora 
+        text-sm md:text-base hover:text-biru transition-colors duration-300">
+                <span class="material-icons text-hijau hover:text-biru transition-colors duration-300">
+                    menu
+                </span>
                 See More
             </a>
         </div>
     </div>
+    <!-- Tambahkan di dalam Blade animate-gradient -->
+    <style>
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
 
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientMove 3s linear infinite;
+    }
+    </style>
 </section>
 @endsection

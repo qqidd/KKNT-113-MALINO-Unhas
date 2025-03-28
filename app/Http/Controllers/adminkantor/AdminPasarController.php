@@ -102,6 +102,6 @@ class AdminPasarController extends Controller
         Storage::delete($pasar->foto); // Hapus foto
         $pasar->delete();
 
-        return redirect()->route('layouts.kantor.adminpasar')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('layouts.kantor.adminpasar')->with('deleted', 'Data berhasil dihapus.');
     }
 }

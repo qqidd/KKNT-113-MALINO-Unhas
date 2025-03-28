@@ -155,7 +155,7 @@
             <textarea name="deskripsi" id="deskripsi" required>{{ $foto->deskripsi }}</textarea>
 
             <button type="submit" class="btn btn-submit">Update Foto</button>
-            <a href="{{ route('layouts.adkon') }}" class="btn btn-back">Kembali</a>
+            <a href="{{ route('layouts.adgel') }}" class="btn btn-back">Kembali</a>
         </form>
     </div>
 

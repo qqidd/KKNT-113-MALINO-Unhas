@@ -162,7 +162,7 @@
 
 
             <button type="submit" class="btn btn-submit">Update Foto</button>
-            <a href="{{ route('layouts.adkon') }}" class="btn btn-back">Kembali</a>
+            <a href="{{ route('dashboard') }}" class="btn btn-back">Kembali</a>
         </form>
     </div>
 
